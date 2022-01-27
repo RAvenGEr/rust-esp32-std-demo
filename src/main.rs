@@ -214,11 +214,13 @@ fn main() -> Result<()> {
             rmii_tx_en: pins.gpio21,
             rmii_txd0: pins.gpio19,
             rmii_mdio: pins.gpio18,
-            rmii_ref_clk: pins.gpio0,
+            rmii_ref_clk: pins.gpio17,
             rst: Some(pins.gpio5),
         },
-        RmiiEthChipset::IP101,
-        None,
+        #[cfg(any(esp_idf_version = "4.4", esp_idf_version_major = "5"))]
+        RmiiClockDirection::Out,
+        RmiiEthChipset::LAN87XX,
+        Some(0),
     )?))?;
 
     #[cfg(feature = "w5500")]

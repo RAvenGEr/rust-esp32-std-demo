@@ -61,7 +61,7 @@ anyhow = {version = "1", features = ["backtrace"]}
 log = "0.4"
 url = "2"
 esp-idf-sys = { version = "0.30.1", features = ["binstart"] }
-esp-idf-svc = "0.36.2"
+esp-idf-svc = { git = "https://github.com/RAvenGEr/esp-idf-svc", branch = "rmii-clock-pin-polarity-support" }
 esp-idf-hal = "0.32.4"
 embedded-svc = "0.16"
 embedded-hal = "0.2"
